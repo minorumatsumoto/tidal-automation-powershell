@@ -48,7 +48,7 @@
 	{
 		try
 		{	
-			$result = Invoke-RestMethod -uri $RestURL -Method $Method -Header $Header -ContentType "application/x-www-form-urlencoded; charset=utf-8" -Body $Body -TimeoutSec 120 -ErrorVariable logonResultErr
+			$result = Invoke-RestMethod -uri $RestURL -Method $Method -Header $Header -ContentType "application/x-www-form-urlencoded; charset=utf-8" -Body $Body -UserAgent "Chrome" -TimeoutSec 120 -ErrorVariable logonResultErr
 
 			if (($result | Select-Object -ExpandProperty html -ErrorAction SilentlyContinue) -match "html")
 			{
